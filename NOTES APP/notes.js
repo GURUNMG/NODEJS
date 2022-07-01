@@ -1,4 +1,5 @@
 const fs=require("fs");
+
 const chalk=require('D:/BACKEND/LEARN/node_modules/chalk') ;
 
 const getNotes=function(){
@@ -7,10 +8,14 @@ const getNotes=function(){
 
 const addNote=function(title, body){
  const notes = loadnotes()
- const duplicateNotes = notes.filter(function(note){
-  return note.title===title
- })
- if (duplicateNotes.length=== 0){
+ // const duplicateNotes = notes.filter(function(note){
+ //  return note.title===title
+ // })
+ const duplicateNote=notes.filter((note) => note.title===title)
+ // if (duplicateNotes.length=== 0)
+ // if(duplicateNote===undefined)
+ if(!duplicateNote)
+ {
   notes.push({
    title: title,
    body: body
@@ -63,10 +68,34 @@ const loadnotes=function(){
  }
 }
 
+// listing title
+
+const listNotes = function(){
+ const notes=loadnotes()
+ 
+ notes.forEach( (note)=> {
+  console.log(note.title)
+ });
+}
+
+// reading notes
+const readNote=(title) => {
+ const notes=loadnotes()
+ const note=notes.find( (note) => note.title===title)
+ 
+ if (note){ 
+  console.log(note.title)
+  console.log(note.body)
+ }
+ else {console.log("No notes available")}
+}
+
 module.exports ={
  getNotes:getNotes,
  addNote:addNote,
- removeNote:removeNote
+ removeNote:removeNote,
+ listNotes:listNotes,
+ readNote:readNote
 }
 
 
