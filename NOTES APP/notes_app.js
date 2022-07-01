@@ -1,5 +1,5 @@
-
 const nt=require("./notes")
+
 
 // video 19...
 
@@ -57,54 +57,32 @@ yargs.command({
   }
 },
  handler:function(argv){
-  // console.log("Adding a new note...");
-  // console.log("Title:",argv.title);
-  // console.log(" Body:",argv.body);
   nt.removeNote(argv.title);
  }
 })
 
+// listing the title of the Note..
 yargs.command({
- command:"read",
- describe:"Read a note",
- builder:{
-  title:{
-   describe:"Title is needed to add a new note",
-   demandOption:true,
-   type:"string"
-  },
-  body:{
-   describe:"Body is theme of the book",
-   demandOption:true,
-   type:"string"
-  }
-},
+ command:"list",
+ describe:"listing the title of all note",
  handler:function(){
-  console.log("Adding a new note...");
-  console.log("Title:",argv.title);
-  console.log(" Body:",argv.body);
+  nt.listNotes()
  }
 })
 
+//Reading notes
 yargs.command({
- command:"list",
- describe:"List all notes",
+ command:"read",
+ describe:"reading the notes title and body",
  builder:{
   title:{
    describe:"Title is needed to add a new note",
    demandOption:true,
    type:"string"
-  },
-  body:{
-   describe:"Body is theme of the book",
-   demandOption:true,
-   type:"string"
   }
 },
  handler:function(){
-  console.log("Adding a new note...");
-  console.log("Title:",argv.title);
-  console.log(" Body:",argv.body);
+  nt.readNote(argv.title)
  }
 })
 
