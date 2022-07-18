@@ -1,0 +1,65 @@
+body{
+ color:cyan;
+ max-width:650px;
+ margin: 0 auto;
+ padding: 0 16;
+
+ display: flex;
+ flex-direction: column;
+ min-height: 98vh;
+}
+
+.main-content{
+ flex-grow: 1;
+}
+
+/* h1{
+ color: cyan;
+ background-color: black;
+} */
+
+/* img{
+ height: 300px;
+ width: auto;
+} */
+
+header {
+ margin-top: 16px;
+ margin-bottom: 48px;
+}
+footer{
+ color: dimgray;
+ /* background-color: black; */
+ border: 2px solid gray;
+ margin-top: 16px;
+ padding: 10px 0;
+}
+
+header a{
+ color: coral;
+ margin-right: 16px;
+ text-decoration: none;
+}
+
+h1{
+ font-size: 54px;
+ margin-bottom: 16px;
+}
+
+.potrait{
+ /* height: 300px; */
+ width: 250px;
+}
+
+input{
+ border: 1px solid black;
+ padding: 8px;
+}
+
+button{
+ cursor: pointer;
+ border:1px solid #888888;
+ background: #888888;
+ color: white;
+ padding: 8px;
+}
