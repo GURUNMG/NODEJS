@@ -1,0 +1,19 @@
+GIT COMMANDS:
+
+Initilize git:
+git init
+
+git status (those files are saved by git while using commit)
+(node_modules folder is no needed to saved) (npm install is used to recover it)
+
+create new file (.gitignore) (file name should be as this)
+in (.gitignore) .. (node_module/) is written.
+
+Add all to Staging area:
+git add . (adding all the folder to Staging area)
+
+now we are ready to commit..
+
+command format... git commit -m "message"
+
+git commit -m "frist commit"
